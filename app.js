@@ -21,7 +21,9 @@ var commentRouter = require("./routes/comment"),
 
 
 // Connecting to the courses database
-mongoose.connect("mongodb://localhost/restaurant_databse_final");
+// mongoose.connect("mongodb://localhost/restaurant_databse_final");
+mongoose.connect("mongodb://debasis:imdev1996@ds247759.mlab.com:47759/selectrestaurant");
+
 
 //Configuring the bodyParse and view engine
 app.use(flash());
