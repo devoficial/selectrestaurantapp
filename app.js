@@ -21,9 +21,7 @@ var commentRouter = require("./routes/comment"),
 
 
 // Connecting to the courses database
-mongoose.connect(process.env.DATABSE_URL);
-
-
+mongoose.connect(process.env.DATABASE_URL);
 
 //Configuring the bodyParse and view engine
 app.use(flash());
