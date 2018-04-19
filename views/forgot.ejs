@@ -1,0 +1,12 @@
+<% include ./partials/header %>
+<div class="container mx-auto">
+<form action="/forgot" method="POST" class="form-inline">
+    <legend>Forgot password</legend>
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" class="form-control" id="staticEmail2" name="email">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+</div>
+<% include ./partials/footer %>

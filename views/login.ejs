@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+<div class="container mt-3">
+<div class="row justify-content-center">
+  
+  <!---->
+<div class='col-md-4'>
+<form class="ui form attached fluid segment" action="/login" method="POST">
+   <div class="ui attached message">
+    <div class="header">
+      Welcome to selectrestaurant!
+    </div>
+    <p>Fill out the form below to login </p>
+    </div>
+    <div class="field">
+      <label>UserName</label>
+      <input name="username" placeholder="UserName" type="text">
+    </div>
+    <div class="field">
+      <label>pasword</label>
+      <input name="password" placeholder="password" type="password">
+    </div>
+  
+ 
+  <div class="field" >
+        <button class="ui inverted green button">login</button>
+  </div>
+  <div class="field">
+  <i class="icon help"></i>
+   <a href="/forgot">forgot your password?</a>
+</div>
+</div>
+
+</form>
+ 
+</div>
+</div>
+</div>
+<% include ./partials/footer %>

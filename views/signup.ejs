@@ -1,0 +1,68 @@
+<% include ./partials/header %>
+<div class="container mt-3 mb-3">
+<div class="row justify-content-center">
+<div class="col-md-8">
+<form class="ui form" action="/signup" method="POST" enctype="multipart/form-data">
+  <div class="ui attached message">
+  <div class="header">
+    Welcome to selectRestaurant
+  </div>
+  <p>Fill out the form below to sign-up for a new account</p>
+  <i class="icon help"></i>
+  Already signed up? <a href="/login">Login here</a> instead.
+</div>
+
+  <h4 class="ui dividing header">Sign Up</h4>
+  <div class="field">
+    <label>User</label>
+    <div class="three fields">
+      <div class="field">
+        <input type="text" name="username" placeholder="Username">
+      </div>
+      <div class="field">
+        <input type="text" name="firstName" placeholder="First Name">
+      </div>
+      <div class="field">
+        <input type="text" name="lastName" placeholder="Last Name">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>User's email and password</label>
+    <div class="fields">
+      <div class="twelve wide field">
+        <input type="text" name="email" placeholder="email">
+      </div>
+      <div class="four wide field">
+        <input type="password" name="password" placeholder="password">
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <h4 class="ui dividing header">Provide your avatar, birthday and admin code (optional)</h4>
+    <div class="three fields">
+      <div class="field">
+        <input type="file" name="avatar" accept="image/*"class="form-control" required>
+      </div>
+      <div class="field">
+        <input type="date" name="birthday" placeholder="Birthday">
+      </div>
+      <div class="field">
+        <input type="password" name="admincode" placeholder="Admin code">
+      </div>
+    </div>
+  </div>
+  
+   <h4 class="ui dividing header">Apologies</h4>
+   <div class="field">
+    <div id="captcha" class="g-recaptcha form-group" data-sitekey="6LdPllMUAAAAAJ8Kcaae3LFYbaHY08gdsXRHE_rk"></div>
+  </div>
+  <button class="ui button" type="submit">Sign Up</button>
+  </div>
+</form>
+
+</div>
+</div>
+</div>
+
+<% include ./partials/footer %>

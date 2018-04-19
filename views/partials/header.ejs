@@ -1,0 +1,70 @@
+<!Doctype html>
+<html>
+    <head>
+        <!-- Make site responsive on mobile/tablet -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Find the best restaurant in your area.</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+         <script src='https://www.google.com/recaptcha/api.js'></script>
+    </head>
+    <body>
+<!--Navigation page-->
+
+<nav class="navbar navbar-expand-lg  navbar-light ">
+  <a class="navbar-brand" href="/"><i class="check circle outline icon"></i>SelectRestaurant</a>
+  <a class="navbar-brand <%= typeof page !== 'undefined' && page === "Home" ? 'activate' : '' %>" href="/home"><i class="home icon"></i>Home</a>
+  <p class="navbar-brand">
+      <form class="form-inline" action="/home" method="GET">
+        <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search a restaurant" aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" value="search"type="submit">Search</button>
+      </form>
+    </p>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+       <% if(!currentUser) { %>
+        <li class="<%= typeof page !== 'undefined' && page === "login" ? 'activate' : '' %> nav-item">
+          <a class="nav-link" href="/login"><i class="lock icon"></i>Login</a>
+        </li>
+        <li class="<%= typeof page !== 'undefined' && page === "signup" ? 'activate' : '' %> nav-item">
+          <a class="nav-link" href="/signup"><i class="sign in alternate icon"></i>Sign up</a>
+        </li>
+      <% } else { %>
+      
+        <li class="nav-item">
+          <a  class="nav-link" href="/users/<%= currentUser.id %>"> <i class="user icon"></i> Signed In As  <%= currentUser.username %></a>
+        </li>
+        <li class=" nav-item">
+          <a class="nav-link" href="/logout"><i class="power off icon"></i>Logout</a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" href="/contact"> <i class="envelope icon"></i>contact</a>
+        </li>
+      <% } %>
+     </ul>
+  </div>
+</nav>
+<div id="flash" class="container mt-3">
+  <% if(error && error.length>0) { %>
+  <div class="alert alert-warning" role="alert">
+    <%= error %>
+  </div>
+  <% } %>
+  <% if(success && success.length>0) { %>
+  <div class="alert alert-success" role="alert">
+    <%= success %>
+  </div>
+  <% } %>
+  <% if(danger && danger.length>0) { %>
+  <div class="alert alert-danger" role="alert">
+    <%= danger %>
+  </div>
+  <% } %>
+</div>
+<article class="wrapper">
+
+    
